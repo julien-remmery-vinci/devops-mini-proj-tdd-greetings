@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1699812129762" clover="3.2.0">
-  <project timestamp="1699812129762" name="All files">
-    <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1" elements="11" coveredelements="11" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
-    <file name="greeting.js" path="C:\Users\henjr\Desktop\devvOps\bloc2-q1-projet-devops\greeting.js">
-      <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-      <line num="3" count="3" type="cond" truecount="2" falsecount="0"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="6" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
+<coverage generated="1699817675488" clover="3.2.0">
+  <project timestamp="1699817675488" name="All files">
+    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
+    <file name="greeting.js" path="C:\Users\remme\OneDrive\Bureau\Programmation\HE Vinci\bloc2\devops\bloc2-q1-miniprojet-devops\greeting.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

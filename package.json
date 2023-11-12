@@ -1,9 +1,9 @@
 {
-  "name": "bloc2-q1-projet-devops",
+  "name": "devops-mini-proj-tdd-greetings",
   "version": "1.0.0",
   "type": "module",
   "description": "Mini projet devops: Hello world",
-  "main": "index.js",
+  "main": "greeting.js",
   "scripts": {
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/julien-remmery-vinci/bloc2-q1-miniprojet-devops.git"
+    "url": "git+https://github.com/julien-remmery-vinci/devops-mini-proj-tdd-greetings.git"
   },
   "author": "Julien Remmery, Henry Obedekah",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/julien-remmery-vinci/bloc2-q1-miniprojet-devops/issues"
+    "url": "https://github.com/julien-remmery-vinci/devops-mini-proj-tdd-greetings/issues"
   },
-  "homepage": "https://github.com/julien-remmery-vinci/bloc2-q1-miniprojet-devops#readme",
+  "homepage": "https://github.com/julien-remmery-vinci/devops-mini-proj-tdd-greetings#readme",
   "devDependencies": {
     "eslint": "^8.53.0",
     "eslint-config-standard": "^17.1.0",
