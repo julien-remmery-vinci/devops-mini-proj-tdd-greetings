@@ -11,4 +11,6 @@ test("Test for the greet function: handle null, undefined and empty values with 
 
 })
 
-
+test("Test for the greet function: handle upper case", () => {
+    expect(greet("JERRY")).toBe("HELLO, JERRY!");
+})
