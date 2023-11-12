@@ -1,18 +1,20 @@
-const { table } = require("console");
-
-function greet(name){
+function greet(name, language){
     if(name === null || name ===undefined || name ==="") return "Hello, my friend.";
 
     if(Array.isArray(name) && name.length >= 2) {
         const sortedNames = sortArray(name); 
-        let out = lowerNames(sortedNames[0]);
+        let out = lowerNames(sortedNames[0], language);
          
-         if(sortedNames[1].length > 0 ){
-           out += upperNames(sortedNames[1]);
-         }
-         return out ; 
+        if(sortedNames[1].length > 0 ){
+        out += upperNames(sortedNames[1], language);
+        }
+        return out ; 
        
     }
+
+    if(language === "en") return `Hello, ${name}.`;
+    else if(language === "fr") return `Bonjour, ${name}.`;
+    else if(language === "nl") return `Hallo, ${name}.`;
     
     if(name === name.toUpperCase()) return "HELLO, "+ name +"!";
 
@@ -29,12 +31,14 @@ function sortArray(name){
 
 }
 
-function lowerNames(names){
-    let out = "Hello, ";
+function lowerNames(names, language){
+    let words = ["Hello", "and"];
+    if(language !== undefined) words = selectLanguage(language);
+    let out = `${words[0]}, `;
     for(let i = 0;i < names.length; i++){
         out += names[i];
         if(i===names.length-2) {
-            out += " and "+names[i+1];
+            out += ` ${words[1]} ${names[i+1]}`;
             break;
         }
         else out += ", ";
@@ -43,14 +47,22 @@ function lowerNames(names){
     return out ; 
 
 }
-function upperNames(names){
-    let out = " AND HELLO ";
+function upperNames(names, language){
+    let words = ["HELLO", "AND"];
+    if(language !== undefined) words = selectLanguage(language);
+    let out = ` ${words[1].toUpperCase()} ${words[0].toUpperCase()} `;
     for(let i = 0; i < names.length ;i++){
         out += names[i];   
     }
     out+=" !"; 
     return out ;
 
+}
+
+function selectLanguage(language){
+    if(language === "en") return ["Hello", "and"];
+    else if(language === "fr") return ["Bonjour", "et"];
+    else if (language === "nl") return ["Hallo", "en"];
 }
 
 

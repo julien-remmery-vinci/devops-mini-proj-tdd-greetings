@@ -23,7 +23,15 @@ test("Test for the greet function: handle array of 2 names", () => {
 test("Test for the greet function: handle array of 2 or more names", () => {
     expect(greet(["Amy", "Brian", "Charlotte"])).toBe("Hello, Amy, Brian and Charlotte.");
 })
+
 test("Test for the greet function: handle mixed upper case and lower case names ", () => {
     expect(greet( ["Amy", "BRIAN", "Charlotte"])).toBe("Hello, Amy and Charlotte. AND HELLO BRIAN !");
     
+})
+
+test("Test for the greet function: handle multiple languages", () => {
+    expect(greet("Marie", "en")).toBe("Hello, Marie.");
+    expect(greet("Marie", "fr")).toBe("Bonjour, Marie.");
+    expect(greet("Marie", "nl")).toBe("Hallo, Marie.");
+    expect(greet(["Marie", "Julien"], "en")).toBe("Hello, Marie and Julien.");
 })
