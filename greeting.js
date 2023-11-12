@@ -5,29 +5,14 @@ function greet(name){
 
     if(Array.isArray(name) && name.length >= 2) {
         const sortedNames = sortArray(name); 
-        let out = "Hello, ";
-        for(let i = 0;i < sortedNames[0].length; i++){
-            out += sortedNames[0][i];
-            if(i===sortedNames[0].length-2) {
-                out += " and "+sortedNames[0][i+1];
-                break;
-            }
-            else out += ", ";
-        }
-         out+=".";
+        let out = lowerNames(sortedNames[0]);
+         
          if(sortedNames[1].length > 0 ){
-            out += " AND HELLO ";
-            for(let i = 0; i < sortedNames[1].length ;i++){
-            out += sortedNames[1][i]; 
-            
-            }
-            out+=" !"; 
+           out += upperNames(sortedNames[1]);
          }
          return out ; 
        
     }
-    
-
     
     if(name === name.toUpperCase()) return "HELLO, "+ name +"!";
 
@@ -44,6 +29,29 @@ function sortArray(name){
 
 }
 
+function lowerNames(names){
+    let out = "Hello, ";
+    for(let i = 0;i < names.length; i++){
+        out += names[i];
+        if(i===names.length-2) {
+            out += " and "+names[i+1];
+            break;
+        }
+        else out += ", ";
+    }
+    out+=".";
+    return out ; 
+
+}
+function upperNames(names){
+    let out = " AND HELLO ";
+    for(let i = 0; i < names.length ;i++){
+        out += names[i];   
+    }
+    out+=" !"; 
+    return out ;
+
+}
 
 
 module.exports = greet;
