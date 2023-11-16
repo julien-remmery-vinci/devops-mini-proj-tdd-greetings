@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90.56% </span>
+                <span class="strong">85.93% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>48/53</span>
+                <span class='fraction'>55/64</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.81% </span>
+                <span class="strong">71.73% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>27/33</span>
+                <span class='fraction'>33/46</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95% </span>
+                <span class="strong">89.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>38/40</span>
+                <span class='fraction'>43/48</span>
             </div>
         
             
@@ -131,27 +131,44 @@
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -192,20 +209,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">function greet(name, language){
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">function greet(name){
+    let language = "en";
     if(name === null || name ===undefined || name ==="") return "Hello, my friend.";
 &nbsp;
     if(Array.isArray(name) &amp;&amp; name.length &gt;= 2) {
+        if(name[name.length-1]==="fr" || name[name.length-1] === "en" || name[name.length-1] ==="nl") {
+            language = name[name.length-1];
+            name.splice(name.length-1);
+            if(name.length===1){
+                if(language === "en") return `Hello, ${name}.`;
+                else if(language === "fr") return `Bonjour, ${name}.`;
+                else <span class="missing-if-branch" title="else path not taken" >E</span>if(language === "nl") return `Hallo, ${name}.`;
+            }
+        }
         const sortedNames = sortArray(name); 
         let out = lowerNames(sortedNames[0], language);
-         
         if(sortedNames[1].length &gt; 0 ){
         out += upperNames(sortedNames[1], language);
         }
@@ -213,13 +238,13 @@
        
     }
 &nbsp;
-    if(language === "en") return `Hello, ${name}.`;
-    else if(language === "fr") return `Bonjour, ${name}.`;
-    else if(language === "nl") return `Hallo, ${name}.`;
-    
     if(name === name.toUpperCase()) return "HELLO, "+ name +"!";
 &nbsp;
-    return "Hello, "+ name +".";
+    if(language === "en") return `Hello, ${name}.`;
+    else <span class="cstat-no" title="statement not covered" ><span class="missing-if-branch" title="else path not taken" >E</span>if(language === "fr") <span class="cstat-no" title="statement not covered" >return `Bonjour, ${name}.`;</span></span>
+    else <span class="cstat-no" title="statement not covered" >if(language === "nl") <span class="cstat-no" title="statement not covered" >return `Hallo, ${name}.`;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return "Hello, "+ name +".";</span>
 }
 function sortArray(name){
     const lowerCaseNames = []; 
@@ -233,8 +258,8 @@ function sortArray(name){
 }
 &nbsp;
 function lowerNames(names, language){
-    let words = ["Hello", "and"];
-    if(language !== undefined) words = selectLanguage(language);
+    let words = [];
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(language !== undefined) words = selectLanguage(language);
     let out = `${words[0]}, `;
     for(let i = 0;i &lt; names.length; i++){
         out += names[i];
@@ -246,18 +271,17 @@ function lowerNames(names, language){
     }
     out+=".";
     return out ; 
-&nbsp;
 }
+&nbsp;
 function upperNames(names, language){
     let words = ["HELLO", "AND"];
-    <span class="missing-if-branch" title="if path not taken" >I</span>if(language !== undefined) <span class="cstat-no" title="statement not covered" >words = selectLanguage(language);</span>
+    <span class="missing-if-branch" title="else path not taken" >E</span>if(language !== undefined) words = selectLanguage(language);
     let out = ` ${words[1].toUpperCase()} ${words[0].toUpperCase()} `;
     for(let i = 0; i &lt; names.length ;i++){
         out += names[i];   
     }
     out+=" !"; 
     return out ;
-&nbsp;
 }
 &nbsp;
 function selectLanguage(language){
@@ -274,7 +298,7 @@ module.exports = greet;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-12T22:18:59.183Z
+                at 2023-11-16T17:36:10.309Z
             </div>
         <script src="prettify.js"></script>
         <script>
