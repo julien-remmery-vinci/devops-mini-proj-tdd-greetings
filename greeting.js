@@ -4,12 +4,9 @@ function greet(name){
 
     if(Array.isArray(name) && name.length >= 2) {
         if(name[name.length-1]==="fr" || name[name.length-1] === "en" || name[name.length-1] ==="nl") {
-            language = name[name.length-1];
-            name.splice(name.length-1);
+            language = name.pop();
             if(name.length===1){
-                if(language === "en") return `Hello, ${name}.`;
-                else if(language === "fr") return `Bonjour, ${name}.`;
-                else if(language === "nl") return `Hallo, ${name}.`;
+                return greetWithLanguage(name, language);
             }
         }
         const sortedNames = sortArray(name); 
@@ -22,10 +19,6 @@ function greet(name){
     }
 
     if(name === name.toUpperCase()) return "HELLO, "+ name +"!";
-
-    if(language === "en") return `Hello, ${name}.`;
-    else if(language === "fr") return `Bonjour, ${name}.`;
-    else if(language === "nl") return `Hallo, ${name}.`;
 
     return "Hello, "+ name +".";
 }
@@ -73,5 +66,10 @@ function selectLanguage(language){
     else if (language === "nl") return ["Hallo", "en"];
 }
 
+function greetWithLanguage(name, language){
+    if(language === "en") return `Hello, ${name}.`;
+    else if(language === "fr") return `Bonjour, ${name}.`;
+    else if(language === "nl") return `Hallo, ${name}.`;
+}
 
 module.exports = greet;
