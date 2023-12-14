@@ -32,7 +32,8 @@ jobs:
     - name: Echo current date
       run: echo $NOW
     - run: npm ci
-    - run: npm run code:fix
+    - run: npm run prettier:fix
+    - run: npm run lint:fix
     - run: npm test
     - run: echo $NOW
     - run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
