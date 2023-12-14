@@ -21,5 +21,9 @@ jobs:
       
     - name: Run Prettier
       run: npm run prettier:write
+      
     - name: Run Eslint
       run: npm run lint:fix
+      
+    - name: Run test coverage
+      run: npm run test
