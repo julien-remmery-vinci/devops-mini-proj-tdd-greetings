@@ -21,7 +21,7 @@ jobs:
       run: npm install
 
     - name: Pipeline start time
-      run: echo "Pipeline start time +%H:%M:%S"
+      run: echo "Pipeline start time `date +%H:%M:%S`"
       
     - name: Run Prettier
       run: npm run prettier:fix
@@ -36,7 +36,7 @@ jobs:
       run: npm run build
 
     - name: Pipeline end time
-      run: echo "Pipeline end time +%H:%M:%S"
+      run: echo "Pipeline end time `date +%H:%M:%S`"
 
     - name: Success
       run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
