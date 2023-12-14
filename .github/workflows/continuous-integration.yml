@@ -18,3 +18,8 @@ jobs:
 
     - name: Dependencies Installation
       run: npm install
+      
+    - name: Run Prettier
+      run: npm run prettier:write
+    - name: Run Eslint
+      run: npm run lint:fix
