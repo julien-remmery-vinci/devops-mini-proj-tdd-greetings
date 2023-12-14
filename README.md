@@ -1,9 +1,10 @@
-# DevOps Mini-Projet 2
+# DevOps Mini-Projet 1 et 2
 Travail de recherche , mettre en place de l'integration continue avec les GitHub Actions
 
 ## Informations
 - N° de groupe : 30
 - Membres du groupe : Obedekah Henry, Remmery Julien
+- lien vers le repo : [REPO](https://github.com/julien-remmery-vinci/devops-mini-proj-tdd-greetings)
 
 
 ## Énoncé
