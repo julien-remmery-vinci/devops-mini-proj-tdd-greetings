@@ -24,7 +24,7 @@ jobs:
       run: echo "Pipeline start time +%H:%M:%S"
       
     - name: Run Prettier
-      run: npm run prettier:write
+      run: npm run prettier:fix
       
     - name: Run Eslint
       run: npm run lint:fix
