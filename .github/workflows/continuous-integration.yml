@@ -1,0 +1,42 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches: main
+    types : [opened, edited]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Node.js installation
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Dependencies Installation
+      run: npm install
+
+    - name: Pipeline start time
+      run: echo "Pipeline start time `date +%H:%M:%S`"
+      
+    - name: Run Prettier
+      run: npm run prettier:fix
+      
+    - name: Run Eslint
+      run: npm run lint:fix
+      
+    - name: Run test coverage
+      run: npm run test
+      
+    - name: Build the project
+      run: npm run build
+
+    - name: Pipeline end time
+      run: echo "Pipeline end time `date +%H:%M:%S`"
+
+    - name: Success
+      run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
