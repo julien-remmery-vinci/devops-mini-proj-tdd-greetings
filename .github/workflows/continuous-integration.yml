@@ -18,6 +18,9 @@ jobs:
 
     - name: Dependencies Installation
       run: npm install
+
+    - name: Pipeline start time
+      run: echo "Pipeline start time +%H:%M:%S"
       
     - name: Run Prettier
       run: npm run prettier:write
@@ -30,3 +33,9 @@ jobs:
       
     - name: Build the project
       run: npm run build
+
+    - name: Pipeline end time
+      run: echo "Pipeline end time +%H:%M:%S"
+
+    - name: Success
+      run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
